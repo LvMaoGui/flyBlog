@@ -6,9 +6,12 @@ import {
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
+
+import "./style.scss"
 
 const Layout = () =>{
   return (
@@ -54,6 +57,10 @@ const router = createBrowserRouter([
   {
     path: "/write",
     element: <Write/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
 ]);
 
