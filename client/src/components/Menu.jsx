@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
-function Home() {
+const Menu = () => {
+
   const posts = [
     {
       id: 1,
@@ -29,29 +29,19 @@ function Home() {
     },
   ];
 
-  return <div className="home">
-    <div className="posts">
-      {
-        posts.map((post)=>{
-          return (
-            <div className="post" key={post.id}>
-              <div className="img">
-                <img src={post.img} alt="" />
-              </div>
-              <div className="content">
-                <Link className="link" to={`/post/${post.id}`}>
-                  <h1>{post.title}</h1>
-                  <p>{post.desc}</p>
-                </Link>
-                <button>查看详情</button>
-              </div>
 
-            </div>
-          )
-        })
-      }
+  return (
+    <div className='menu'>
+      <h1>你可能喜欢其他的贴子</h1>
+      {posts.map(post => (
+        <div className="post" key={post.id}>
+          <img src={post.img} alt="" />
+          <h2>{post.title}</h2>
+          <button>阅读更多</button>
+        </div>
+      ))}
     </div>
-  </div>;
-}
+  );
+};
 
-export default Home;
+export default Menu;
